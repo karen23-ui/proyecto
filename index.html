@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Gineco-Pediátrica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://github.com/karen23-ui/proyecto/blob/5c409074ca30161c8b012e6c3a8d5fb930b5cac4/f1e756f4-4bc6-455b-8c4a-f5462d3843ac.JPG?raw=true') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    header img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+    section {
+      background: rgba(255,255,255,0.95);
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 15px;
+      max-width: 800px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #a05ca0;
+    }
+    .accordion {
+      cursor: pointer;
+      background-color: #f7f2f9;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      border-radius: 10px;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .accordion.active, .accordion:hover {
+      background-color: #e3cfe7;
+    }
+    .panel {
+      padding: 0 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    input, select, textarea {
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #c497d3;
+      color: white;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .success {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 10px;
+      display: none;
+    }
+    @media (max-width: 600px) {
+      section {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/karen23-ui/proyecto/5c409074ca30161c8b012e6c3a8d5fb930b5cac4/clinica-de-ginecologia-cdmx.jpg.webp" alt="Logo Clínica">
+  </header>
+
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>Clínica enfocada en salud ginecológica, obstétrica y pediátrica. Brindamos atención con calidez, ética profesional y trato humano, especialmente a mujeres, infancias y familias.</p>
+    <h2>Misión</h2>
+    <p>Brindar atención médica especializada, accesible y con enfoque integral a mujeres, gestantes e infancias.</p>
+    <h2>Visión</h2>
+    <p>Ser un referente en salud femenina e infantil, por nuestra excelencia médica, cercanía y compromiso con la comunidad.</p>
+    <h2>Valores</h2>
+    <ul>
+      <li>Ética profesional</li>
+      <li>Empatía</li>
+      <li>Diversidad</li>
+      <li>Honestidad</li>
+      <li>Responsabilidad</li>
+      <li>Enfoque de género y niñez</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Especialidades Médicas</h2>
+    <button class="accordion">👩‍⚕️ Ginecología</button>
+    <div class="panel"><p>Salud reproductiva, planificación familiar, anticoncepción, estudios Papanicolaou, chequeos ginecológicos.</p></div>
+
+    <button class="accordion">🧐 Obstetricia</button>
+    <div class="panel"><p>Control prenatal, ultrasonidos, educación perinatal, atención en embarazo de bajo y alto riesgo.</p></div>
+
+    <button class="accordion">👶 Pediatría</button>
+    <div class="panel"><p>Control del desarrollo infantil, vacunas, revisiones, prevención de enfermedades y orientación para madres/padres.</p></div>
+
+    <button class="accordion">🩺 Medicina General</button>
+    <div class="panel"><p>Valoración inicial, seguimiento a condiciones generales de salud, chequeos básicos y canalización a especialidades.</p></div>
+  </section>
+
+  <section>
+    <h2>Agenda tu Cita Médica</h2>
+    <form id="formulario">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <select name="sexo" required>
+        <option value="">Sexo</option>
+        <option>Femenino</option>
+        <option>Masculino</option>
+        <option>Otro</option>
+      </select>
+      <select name="especialidad" required>
+        <option value="">Especialidad</option>
+        <option>Ginecología</option>
+        <option>Obstetricia</option>
+        <option>Pediatría</option>
+        <option>Medicina General</option>
+      </select>
+      <input type="date" name="fecha" required>
+      <input type="time" name="hora" required>
+      <textarea name="comentarios" placeholder="Comentarios adicionales"></textarea>
+      <button type="submit">Agendar cita</button>
+      <div class="success" id="mensajeExito">👍 Gracias, tu cita ha sido agendada.<br>⏳ Redirigiendo al inicio...<br>🎉 Te contactaremos pronto.</div>
+    </form>
+  </section>
+
+  <script>
+    // Acordeón
+    document.querySelectorAll('.accordion').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const panel = btn.nextElementSibling;
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px';
+      });
+    });
+
+    // Envío de formulario a Google Sheets
+    const form = document.getElementById('formulario');
+    const mensajeExito = document.getElementById('mensajeExito');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('https://script.google.com/macros/s/AKfycbyAoLOtkscEtuXHnv3jvN4sR9dHd73-KopQpH6KTC4cJKD1p6eB3D7VRjBF3tEY86KU/exec', {
+        method: 'POST',
+        body: data
+      })
+      .then(res => res.text())
+      .then(() => {
+        mensajeExito.style.display = 'block';
+        form.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => mensajeExito.style.display = 'none', 5000);
+      });
+    });
+  </script>
+</body>
+</html>
